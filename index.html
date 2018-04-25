@@ -4,13 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Document</title> 
+  <script id="book-list-template" type="text/x-handlebars-template">
+    <section class="container">
+      <ul>
+        <img class="book-image" src="{{image_url}}">
+        <li>{{title}}</li>
+        <li>{{author}}</li>
+        <button class="button">View details</button>
+      </ul>      
+    </section>
+  </script>
+  
+  
 </head>
 <body>
   <main>
-    <p>Here we go</p>
+
+    
   </main>
   
-  <script></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+  <script src="/scripts/models/book.js"></script>
+  <script src="/scripts/views/book-view.js"></script>
 </body>
 </html>

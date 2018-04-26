@@ -2,9 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <base href = './'>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title> 
+
   <script id="book-list-template" type="text/x-handlebars-template">
     <section class="container">
       <ul>
@@ -16,17 +18,28 @@
     </section>
   </script>
   
-  
 </head>
 <body>
   <main>
-
+    <section id="new-book" class="container">
+      <form>
+        <input type="text" name="title" placeholder="title"/>
+        <input type="text" name="author" placeholder="author"/>
+        <input type="text" name="isbn" placeholder="isbn"/>
+        <input type="text" name="image_url" placeholder="image_url"/>
+        <input type="text" name="description" placeholder="description"/>
+        <button>Submit</button>
+      </form>
+    </section>
     
   </main>
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
-  <script src="/scripts/models/book.js"></script>
-  <script src="/scripts/views/book-view.js"></script>
+  <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
+  <script src="/scripts/models/book.js" type="text/javescript"></script>
+  <script src="/scripts/views/book-view.js" type="text/javescript"></script>
+  <script src="/scripts/views/error-view.js" type="text/javescript"></script>
+  <script src="/scripts/views/routes.js" type="text/javescript"></script>
 </body>
 </html>

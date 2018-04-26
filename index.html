@@ -8,19 +8,38 @@
   <title>Document</title> 
 
   <script id="book-list-template" type="text/x-handlebars-template">
-    <section class="container">
-      <ul>
-        <img class="book-image" src="{{image_url}}">
-        <li>{{title}}</li>
-        <li>{{author}}</li>
-        <button class="button">View details</button>
-      </ul>      
-    </section>
+    <div class="container">
+      <img src={{image_url}}>
+      <h3>{{title}}</h3>
+      <p>{{author}}</p>
+      <button class="button">View details</button>    
+    </div>
+  </script>
+
+  <script id="book-detail-template" type="text/x-handlebars-template">
+    <div class="container">
+      <!-- Detail book page template-->
+    </div>
   </script>
   
+  <script id="error-template" type="text/x-handlebars-template">
+    <h2>Oops.. something went horribly wrong!</h2>
+  </script>
+
 </head>
 <body>
   <main>
+    <section class="book-view" class="container">
+      <h2>My Books</h2>
+      <section class="book-list">
+        <ul id="book-list"></ul>
+      </section>
+    </section>
+
+    <section class="detail-view" class="container">
+      <section class="book-detail"></section>
+    </section>
+
     <section id="new-book" class="container">
       <form>
         <input type="text" name="title" placeholder="title"/>
@@ -32,9 +51,7 @@
       </form>
     </section>
     
-  </main>
-  
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </main>  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
   <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
   <script src="/scripts/models/book.js" type="text/javescript"></script>

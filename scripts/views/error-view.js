@@ -1,10 +1,9 @@
 'use strict';
-let app = app || {};
-
+var app = app || {};
 (function(module){
   var errorView = {};
 
-  let err = {
+  let error = {
     status: 404,
     message: "Page not found"
   }

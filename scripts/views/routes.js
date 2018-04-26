@@ -1,7 +1,18 @@
 'use strict';
+console.log('hi')
 
-page('/', () => app.Book.fetchAll(app.booksView.initIndexPage));
-page('/book/:id', ctx => app.booksView.initBookPage(ctx));
-page('/add', ctx => app.booksView.initAddPage(ctx));
+//Displaying list of books as home page
+page('/', () => {
+  console.log('in', app)
+  app.Book.fetchAll(app.bookView.initIndexPage)
+});
+
+//Displaying single book
+page('/book/:id', () => {
+  app.Book.fetchOne(ctx, app.bookView.initBookPage)
+});
+
+//Displaying form
+page('/add', () => app.booksView.initAddPage);
 
 page();

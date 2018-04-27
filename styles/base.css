@@ -5,6 +5,17 @@
 html {
   height: 100%;
   font-family: sans-serif;
-  background: #ccc;
+  background: white;  
+  }
+
+body {
+
+  margin: auto;
+  width: 80%;  
+  background: #ccc;  
 }
+
+
+
+
 

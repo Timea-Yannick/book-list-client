@@ -8,11 +8,13 @@ page('/', () => {
 });
 
 //Displaying single book
-page('/book/:id', () => {
+page('/books/:id', (ctx, next) => {
+  console.log('in here', ctx);
+  
   app.Book.fetchOne(ctx, app.bookView.initBookPage)
 });
 
 //Displaying form
-page('/add', () => app.booksView.initAddPage);
+page('/add', (ctx, next) => app.bookView.initAddPage);
 
 page();

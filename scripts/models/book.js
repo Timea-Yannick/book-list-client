@@ -38,9 +38,11 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmenApiUrl;
   };
 
   Book.fetchOne = (ctx, callback) => {
-    $.get(`${ENV.apiUrl}/api/v1/books/${ctx.params.book_id}`)
-    .then(results => ctx.book = results[0])
-    .then(callback)
+    $.get(`${ENV.apiUrl}/api/v1/books/${ctx.params.id}`)
+    .then(results =>{ 
+      console.log(results)
+      ctx.book = new Book(results)})
+    .then(callback(ctx))
     .catch(errorcallback)
   }
 

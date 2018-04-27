@@ -18,7 +18,7 @@ console.log('in book view');
   // bookView.setTeasers = () => {
 
 
-  bookView.initBookPage = () => {
+  bookView.initBookPage = (ctx) => {
     $('.container').hide();
     $('#detail-view').show();
     module.Book.all.forEach(book => {
@@ -26,13 +26,12 @@ console.log('in book view');
         $('.book-detail').append(book.toSingleHtml());
       }
     }); 
-  }
-  
+  } 
 
   bookView.initAddPage = () => {
+    console.log('i have been clicked')
     $('.container').hide();
     $('#new-book').show();
   }
-
   module.bookView = bookView;
 })(app)

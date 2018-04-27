@@ -1,5 +1,4 @@
 'use strict';
-console.log('hi')
 
 //Displaying list of books as home page
 page('/', () => {
@@ -8,7 +7,7 @@ page('/', () => {
 });
 
 //Displaying single book
-page('/book/:id', () => {
+page('/books/:id', ctx => {
   app.Book.fetchOne(ctx, app.bookView.initBookPage)
 });
 

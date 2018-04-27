@@ -1,26 +1,23 @@
 'use strict'
 var app = app || {};
-console.log('in book view');
-
 
 (function(module){
+
   const bookView = {};
 
   bookView.initIndexPage = () => {
-    console.log('firing');
-    
     $('.container').hide();
     $('#book-view').show();
     module.Book.all.forEach(book => $('#book-list').append(book.toHtml()));
-    console.log(module.Book.all);
   }
 
   // bookView.setTeasers = () => {
 
-
   bookView.initBookPage = () => {
     $('.container').hide();
     $('#detail-view').show();
+    $('.book-detail').empty();
+    
     module.Book.all.forEach(book => {
       if(parseInt(book.book_id) === parseInt(ctx.params.id)) {
         $('.book-detail').append(book.toSingleHtml());
@@ -28,11 +25,11 @@ console.log('in book view');
     }); 
   }
   
-
   bookView.initAddPage = () => {
     $('.container').hide();
     $('#new-book').show();
   }
 
   module.bookView = bookView;
+
 })(app)
